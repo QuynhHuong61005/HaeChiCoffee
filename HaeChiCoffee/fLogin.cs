@@ -16,5 +16,30 @@ namespace HaeChiCoffee
         {
             InitializeComponent();
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void fLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            fStaff f = new fStaff();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }
